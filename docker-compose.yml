@@ -1,0 +1,60 @@
+version: "3.7"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        tty: true
+        volumes:
+            - ./:/var/www
+        ports:
+            - "9000:9000"
+        networks:
+            - laravel
+    nginx:
+        image: nginx:alpine
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            - laravel
+
+    db:
+        image: mysql:5.7.22
+        restart: unless-stopped
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=app
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root
+        volumes:
+            - .data/mysql:/var/lib/mysql
+        ports:
+            - "3307:3306"
+        networks:
+            - laravel
+    # phpmyadmin:
+    #     image: phpmyadmin/phpmyadmin
+    #     environment:
+    #         - PMA_ARBITRARY=0
+    #         - PMA_HOST=mysql
+    #         - PMA_PORT=3306
+    #         - PMA_USER=root
+    #         - PMA_PASSWORD=root
+    #     restart: unless-stopped
+    #     ports:
+    #         - "8080:80"
+    #     volumes:
+    #         - /sessions
+    #     networks:
+    #         - laravel
+networks:
+    laravel:
+        driver: bridge
