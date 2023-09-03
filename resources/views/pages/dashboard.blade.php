@@ -3,7 +3,7 @@
 @section('title',"Home")
 
 @section('css')
-    {{-- <link rel="stylesheet" href="{!! asset('assets/css/plugins/datepicker/datepicker3.css') !!}"/> --}}
+    
 @endsection
 
 @section('content')

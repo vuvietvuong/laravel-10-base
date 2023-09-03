@@ -65,7 +65,7 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
-                    <a href="auth-forgot-password-basic.html">
+                    <a href="{{ route('password.request') }}">
                       <small>Forgot Password?</small>
                     </a>
                   </div>
@@ -94,17 +94,15 @@
 
               <p class="text-center">
                 <span>New on our platform?</span>
-                <a href="auth-register-basic.html">
+                <a href="{{ route('register') }}">
                   <span>Create an account</span>
                 </a>
               </p>
             </div>
           </div>
-          <!-- /Register -->
         </div>
       </div>
     </div>
-
     <div class="buy-now">
       <a
         href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"

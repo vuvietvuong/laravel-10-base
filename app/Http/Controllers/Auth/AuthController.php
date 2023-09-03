@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AuthController extends Controller
@@ -33,14 +35,14 @@ class AuthController extends Controller
     /**
      * Destroy an authenticated session.
      */
-    // public function destroy(Request $request): RedirectResponse
-    // {
-    //     Auth::guard('web')->logout();
+    public function destroy(Request $request): RedirectResponse
+    {
+        Auth::guard('web')->logout();
 
-    //     $request->session()->invalidate();
+        $request->session()->invalidate();
 
-    //     $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-    //     return redirect('/');
-    // }
+        return redirect()->route('login-view');
+    }
 }
