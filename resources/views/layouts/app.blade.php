@@ -62,6 +62,6 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
   </body>
 </html>

@@ -44,7 +44,7 @@
               <div class="app-brand justify-content-center">
                 <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-brands fa-github"></i>
                   </span>
                   <span class="app-brand-text demo text-body fw-bolder">Laravel</span>
                 </a>
@@ -103,15 +103,7 @@
         </div>
       </div>
     </div>
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- End Content -->
   </body>
 </html>
    
